@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RockPaperScissors</title>
+</head>
+<body>
+    <h1>goood luck</h1>
+    <!-- a loop that loops 5 times and rolls a user imput vs a random gen option and whoever gets 3 first wins -->
+
+    <script>
+        var humanChoices = ["r", "p", "s"]
+        var computerChoices = ["r", "p", "s"];
+        var victoryCondition = 0;
+
+        for (var i = 0; i < 4; i++) {
+
+            // the duel (robot+human picking options)
+            // alert("Rock (r), Paper (p), or Scissors (s)?")
+            document.onkeyup = function(event) {
+                var humanChoices = event.key;
+                
+            }
+
+            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)]
+
+            alert("User guess: " + humanChoices);
+            alert("Computer guess: " + computerGuess);
+
+            // if/else statements for logic processing
+            if (humanChoices === "r" && computerGuess === "s"){
+            alert("you win this round!");
+            var victoryCondition = victoryCondition + 1;
+            }
+
+            if (humanChoices === "p" && computerGuess === "r"){
+            alert("you win this round!");
+            var victoryCondition = victoryCondition + 1;
+            }
+
+            if (humanChoices === "s" && computerGuess === "p"){
+            alert("you win this round!")
+            var victoryCondition = victoryCondition + 1;
+            }
+
+            if (humanChoices === "r" && computerGuess === "s"){
+            alert("you lose this round!");
+            var victoryCondition = victoryCondition - 1;
+            }
+
+            if (humanChoices === "p" && computerGuess === "r"){
+            alert("you lose this round!");
+            var victoryCondition = victoryCondition - 1;
+            }
+
+            if (humanChoices === "s" && computerGuess === "p"){
+            alert("you lose this round!")
+            var victoryCondition = victoryCondition - 1;
+            }
+
+        }
+
+
+        // victory code block
+        if (victoryCondition = 3) {
+        alert("you win!")
+        }
+        if (victoryCondition = -3) {
+        alert("you lose!")
+        }
+        // some code for whover has the better score after 5 games, or just leave it and remove game limit
+    
+    
+    
+    </script>
+</body>
+</html>

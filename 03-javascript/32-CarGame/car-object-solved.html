@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>My First Object</title>
+  </head>
+  <body>
+
+    <div>
+      <p id="directions-text">Press 1 2 3 4</p>
+      <p id="userchoice-text"></p>
+      <p id="computerchoice-text"></p>
+      <p id="wins-text"></p>
+      <p id="losses-text"></p>
+      <p id="ties-text"></p>
+    </div>
+
+    <script>
+
+      var directionsText = document.getElementById("directions-text");
+      var userChoiceText = document.getElementById("userchoice-text");
+      var computerChoiceText = document.getElementById("computerchoice-text");
+      var winsText = document.getElementById("wins-text");
+      var lossesText = document.getElementById("losses-text");
+      var tiesText = document.getElementById("ties-text");
+
+      var car = {
+        make: "Honda",
+        model: "Fit",
+        color: "Blue Raspberry",
+        mileage: 3000,
+        isWorking: true,
+      
+        driveToWork: function() {
+
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 8;
+
+          alert("New mileage: " + this.mileage);
+        },
+
+        driveAroundWorld: function() {
+
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 24000;
+
+          alert("New Mileage: " + this.mileage);
+          alert("Car needs a tuneup!");
+
+          this.isWorking = false;
+        },
+
+        getTuneUp: function() {
+          alert("Car is ready to go!");
+          this.isWorking = true;
+        },
+
+        honk: function() {
+          alert("Honk! Honk!");
+        }
+
+        
+      };
+
+      function reWriteStats () {
+        console.log(car.make + car.model + car.mileage + car.isWorking)
+      }
+
+
+
+      document.onkeyup = function(event) {
+
+        var userGuess = event.key;
+
+        if (userGuess === "1"){
+          car.driveToWork()
+          reWriteStats()
+        }
+        if (userGuess === "2"){
+          car.driveAroundWorld()
+          reWriteStats()
+        }
+        if (userGuess === "3"){
+          car.getTuneUp()
+          reWriteStats()
+        }
+        if (userGuess === "4") {
+          car.honk()
+          reWriteStats()
+        }
+      }
+
+    
+
+      // car's make, model, color, mileage, and `isWorking` status to the console.
+            
+
+
+      // // How would we log...
+
+      // // The car's make?
+      // alert("my car is a fabulous " + car.color + " " + car.model + " " + car.make)
+      // // The car's model?
+
+      // // The car's mileage?
+      // alert("it has " + car.mileage + " miles")
+      // // How would we run the car's driveToWork method?
+      // car.driveToWork() 
+      // // How would we run the car's driveAroundWorld method?
+      // car.driveAroundWorld()
+      // // How would we run the getTuneUp method?
+      // if (this.isWorking = false) {
+      //   car.getTuneUp()
+      // }
+      // else{
+      //   car.honk()
+      // }
+      
+    </script>
+    
+  </body>
+</html>

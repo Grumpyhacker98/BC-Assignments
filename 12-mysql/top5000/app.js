@@ -2,14 +2,8 @@ var mysql = require("mysql");
 
 var connection = mysql.createConnection({
     host: "localhost",
-
-    // Your port; if not 3306
     port: 3306,
-
-    // Your username
     user: "root",
-
-    // Your password
     password: "root",
     database: "top_songsDB"
 });
@@ -18,7 +12,7 @@ var searchQuery = process.argv[2]
 var searchTerm = process.argv[3]
 
 artist = "SELECT * FROM top5000 WHERE `artist` = '" + searchTerm + "'"
-sucess = "SELECT * FROM top5000 ORDER BY raw_total ASC"
+sucess = "SELECT artist, COUNT(artist) FROM top5000 GROUP BY artist HAVING COUNT(artist) > 1 ORDER BY Count(artist) DESC"
 range = "SELECT * FROM top5000 WHERE `position` = '" + searchTerm + "'"
 song = "SELECT * FROM top5000 WHERE `song` = '" + searchTerm + "'"
 

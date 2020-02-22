@@ -1,0 +1,14 @@
+{
+  "name": "top5000",
+  "version": "1.0.0",
+  "description": "top 5000 songs mysql database",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "me",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}

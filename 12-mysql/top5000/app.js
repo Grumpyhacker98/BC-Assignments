@@ -36,12 +36,21 @@ connection.connect(function (err) {
 });
 
 // * A query which returns all data for songs sung by a specific artist
+// function artistQuery() {
+//     connection.query(artist, function (err, res) {
+//         if (err) throw err;
+//         console.log(res);
+//         connection.end();
+//     });
+    
+// }
 function artistQuery() {
-    connection.query(artist, function (err, res) {
+    connection.query("SELECT * FROM album3000 WHERE artist = 'queen'", function (err, res) {
         if (err) throw err;
         console.log(res);
         connection.end();
     });
+    
 }
 // * A query which returns all artists who appear within the top 5000 more than once
 function sucessQuery() {
